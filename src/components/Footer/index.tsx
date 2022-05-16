@@ -1,6 +1,7 @@
 import { useTheme } from "next-themes";
-import Image from "next/image";
-import { socialMediaButtons } from "../../constants/socialMediaButtons";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { ImRocket } from "react-icons/im";
+import { VscBracketDot } from "react-icons/vsc";
 import styles from "./styles.module.scss";
 
 export function Footer() {
@@ -8,31 +9,45 @@ export function Footer() {
 
   return (
     <footer className={styles.footer}>
-      {Object.entries(socialMediaButtons).map(([key, value]) => {
-        return (
-          <a
-            key={key}
-            href={value.url}
-            target="_blank"
-            rel="noreferrer"
-            title={`Look at ${key}`}
-          >
-            {theme === "dark" ? (
-              <Image
-                src={value.icon}
-                className={styles.button}
-                alt={`${key} button`}
-              />
-            ) : (
-              <Image
-                src={value.icon}
-                className={styles.button}
-                alt={`${key} button`}
-              />
-            )}
-          </a>
-        );
-      })}
+      <a
+        href="https://twitter.com/cleissonom"
+        title="Twitter button"
+        className={styles.twitter}
+      >
+        {theme === "dark" ? (
+          <FaTwitter size="1.75rem" color="#fff" />
+        ) : (
+          <FaTwitter size="1.75rem" color="#000" />
+        )}
+      </a>
+      <a href="https://linkedin.com/in/cleissonom" title="Linkedin button">
+        {theme === "dark" ? (
+          <FaLinkedin size="1.75rem" color="#fff" />
+        ) : (
+          <FaLinkedin size="1.75rem" color="#000" />
+        )}
+      </a>
+      <a href="https://github.com/cleissonom" title="Github button">
+        {theme === "dark" ? (
+          <FaGithub size="1.75rem" color="#fff" />
+        ) : (
+          <FaGithub size="1.75rem" color="#000" />
+        )}
+      </a>
+      <a href="https://github.com/cleissonom/website" title="SourceCode button">
+        {theme === "dark" ? (
+          <VscBracketDot size="1.75rem" color="#fff" />
+        ) : (
+          <VscBracketDot size="1.75rem" color="#000" />
+        )}
+      </a>
+      <a href="https://rocketseat.com/cleissonom" title="Rocketseat button">
+        {theme === "dark" ? (
+          <ImRocket size="1.75rem" color="#fff" />
+        ) : (
+          <ImRocket size="1.75rem" color="#000" />
+        )}
+      </a>
     </footer>
   );
 }

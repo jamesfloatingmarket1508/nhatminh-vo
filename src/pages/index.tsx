@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
       <DarkModeButton />
       <div>Hello World!</div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
